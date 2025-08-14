@@ -1,0 +1,17 @@
+langchain
+langchain_core
+langchain-huggingface
+langchain-text-splitters
+sentence-transformers
+langchain-openai
+langchain-anthropic
+langchain_community
+langchain-google-genai
+langgraph
+typedict
+pydantic
+ipython
+grandalf
+pypdf
+chromadb
+python-dotenv
