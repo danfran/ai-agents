@@ -27,7 +27,7 @@ if uploaded_file and question and gemini_api_key:
 
     article = uploaded_file.read().decode()
 
-    response = graph.invoke({'messages': [('user', prompt)]})
+    response = graph.invoke({'messages': [('user', question)]})
     st.write("### Answer")
     st.write(response.completion)
 
