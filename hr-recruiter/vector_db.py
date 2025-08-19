@@ -5,8 +5,8 @@ from langchain_core.tools import tool
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 
-vector_store = None
 
+vector_store = None
 
 def parse_pdf(file_path):
     loader = PyPDFLoader(file_path)
@@ -24,8 +24,13 @@ def split_documents(documents):
     return chunked_documents
 
 # preload docs
-def init_vector_store():
-    embeddings_gg = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+def init_vector_store(gemini_api_key=None):
+    if not gemini_api_key:
+        gemini_api_key = os.getenv('GOOGLE_API_KEY')
+    embeddings_gg = GoogleGenerativeAIEmbeddings(
+        model="models/gemini-embedding-001",
+        google_api_key=gemini_api_key
+    )
     global vector_store
     vector_store = InMemoryVectorStore(embeddings_gg)
 

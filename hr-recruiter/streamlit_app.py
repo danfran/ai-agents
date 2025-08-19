@@ -21,7 +21,7 @@ if uploaded_file and question and not gemini_api_key:
     st.info("Please add your Gemini API key to continue.")
 
 if uploaded_file and question and gemini_api_key:
-    init_vector_store()
+    init_vector_store(gemini_api_key)
     agent = create_recruiter_agent()
     graph = build_graph()
 
