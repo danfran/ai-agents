@@ -25,8 +25,6 @@ if uploaded_file and question and gemini_api_key:
     agent = create_recruiter_agent()
     graph = build_graph()
 
-    article = uploaded_file.read().decode()
-
     response = graph.invoke({'messages': [('user', question)]})
     st.write("### Answer")
     st.write(response.completion)
