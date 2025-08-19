@@ -4,7 +4,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.tools import tool
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
-
+import asyncio
 
 vector_store = None
 
@@ -24,7 +24,7 @@ def split_documents(documents):
     return chunked_documents
 
 # preload docs
-def init_vector_store(gemini_api_key=None):
+async def init_vector_store(gemini_api_key=None):
     if not gemini_api_key:
         gemini_api_key = os.getenv('GOOGLE_API_KEY')
     embeddings_gg = GoogleGenerativeAIEmbeddings(
