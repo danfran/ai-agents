@@ -8,3 +8,4 @@ ipython
 grandalf
 pypdf
 python-dotenv
+streamlit
