@@ -1,0 +1,11 @@
+langchain
+langchain-text-splitters
+langchain_community
+langchain-google-genai
+langgraph
+typedict
+ipython
+grandalf
+pypdf
+python-dotenv
+streamlit
